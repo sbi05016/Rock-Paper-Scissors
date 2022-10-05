@@ -6,13 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    img{
-      width: 80px;
-      margin: 1%;
-      border: 2px solid black;
-      padding: 20px;
+    #aimg{
+      margin-right: 55%;
+      margin-left: 45%;
     }
-
+    img{
+      
+      width: 80px;
+      margin-left: 30%;
+      border: 2px solid black;
+      padding: 1px;
+    }
     button{
       width: 4vw;
       height: 2vw;
@@ -35,7 +39,7 @@
 </head>
 <body>
 <div id="aimg">
-  <img src="./a.jpg">
+  <img id='image' src="./a.jpg">
 </div>
 <div id="stop">
   <button class="a">가위</button>
@@ -43,20 +47,19 @@
   <button class="c">보</button>
 </div>
 <script>
-  let image= ["./a.jpg","./b.jpg","./c.jpg"];
-  let gostop = 0
+  let image= ["./a.jpg","./b.jpg","./c.png"];
+  let count = 0
+  let time =()=>{if(co)}
 
-  document.createElement("image")
   document.getElementById('aimg').onclick = function(){
-    if gostop
-    setInterval(()=>{
-    image.map((data,i)=>{
-      return(
-        // image.src = go()
-        console.log(data)
-      )
-    })}, 600)}//600 => 1초
-  document.getElementById('stop').onclick = function(){clearInterval(setInterval)}
+    count =1
+    time()
+    }//600 => 1초
+  document.getElementById('stop').onclick = function(){
+    count=0
+    time()
+  }
+  
 
 </script>
 </body>

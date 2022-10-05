@@ -1,0 +1,8 @@
+{setInterval(()=>{if(count==1){
+    image.map((data,i)=>{setTimeout(function(){console.log(data)},1000)
+      document.getElementById( 'image' ).setAttribute( 'src', `${data}` )
+  }})}, 1200)
+
+  else{
+    clearInterval(setInterval)
+  }}
