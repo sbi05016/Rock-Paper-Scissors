@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img{
+      width: 80px;
+      margin: 1%;
+      border: 2px solid black;
+      padding: 20px;
+    }
+
+    button{
+      width: 4vw;
+      height: 2vw;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2vh;
+    }
+    .a{
+      flex: grow 1;
+      margin-left: 45%;
+    }
+    .b{
+      flex: grow 1;
+    }
+    .c{
+      flex: grow 1;
+    }
+  
+  </style>
+</head>
+<body>
+<div id="aimg">
+  <img src="./a.jpg">
+</div>
+<div id="stop">
+  <button class="a">가위</button>
+  <button class="b">바위</button>
+  <button class="c">보</button>
+</div>
+<script>
+  let image= ["./a.jpg","./b.jpg","./c.jpg"];
+  let gostop = 0
+
+  document.createElement("image")
+  document.getElementById('aimg').onclick = function(){
+    if gostop
+    setInterval(()=>{
+    image.map((data,i)=>{
+      return(
+        // image.src = go()
+        console.log(data)
+      )
+    })}, 600)}//600 => 1초
+  document.getElementById('stop').onclick = function(){clearInterval(setInterval)}
+
+</script>
+</body>
+</html>
