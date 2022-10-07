@@ -39,27 +39,70 @@
 </head>
 <body>
 <div id="aimg">
-  <img id='image' src="./a.jpg">
+  <img id='realimage' src="./a.jpg"  onclick="StartClock()">
 </div>
 <div id="stop">
-  <button class="a">가위</button>
-  <button class="b">바위</button>
-  <button class="c">보</button>
+  <button class="a" onclick="StopClocka()">가위</button>
+  <button class="b" onclick="StopClockb()">바위</button>
+  <button class="c" onclick="StopClockc()">보</button>
 </div>
 <script>
-  let image= ["./a.jpg","./b.jpg","./c.png"];
-  let count = 0
-  let time =()=>{if(co)}
-
-  document.getElementById('aimg').onclick = function(){
-    count =1
-    time()
-    }//600 => 1초
-  document.getElementById('stop').onclick = function(){
-    count=0
-    time()
+  let ai = 'a.jpg';
+  let bi = 'b.jpg';
+  let ci = 'c.png';
+  let inter = null;
+  let time = null;
+  function imgchan(imgdata){
+    document.getElementById('realimage').src=imgdata;
   }
-  
+  const StartClock = ()=>{
+    inter = setInterval(()=>{
+    time = setTimeout(()=>{imgchan(bi)});
+    time = setTimeout(()=>{imgchan(ci)},1000);
+    time = setTimeout(()=>{imgchan(ai)},2000);
+  },3000)}
+
+const StopClocka = ()=>{
+  if(inter!=null){
+  clearInterval(inter)
+  if(time!=null){
+  clearTimeout(time)
+  wina()
+}}}  
+
+const wina = ()=>{let pre = document.getElementById('realimage').getAttribute('src');
+if(pre=='a.jpg'){alert('비김')}
+else if(pre=='b.jpg'){alert('짐')}
+else if(pre=='c.png'){alert('이김')}
+}
+
+const StopClockb = ()=>{
+  if(inter!=null){
+  clearInterval(inter)
+  if(time!=null){
+  clearTimeout(time)
+  winb()
+}}}  
+
+const winb = ()=>{let pre = document.getElementById('realimage').getAttribute('src');
+if(pre=='b.jpg'){alert('비김')}
+else if(pre=='c.png'){alert('짐')}
+else if(pre=='a.jpg'){alert('이김')}
+}
+
+const StopClockc = ()=>{
+  if(inter!=null){
+  clearInterval(inter)
+  if(time!=null){
+  clearTimeout(time)
+  winc()
+}}}  
+
+const winc = ()=>{let pre = document.getElementById('realimage').getAttribute('src');
+if(pre=='c.png'){alert('비김')}
+else if(pre=='a.jpg'){alert('짐')}
+else if(pre=='b.jpg'){alert('이김')}
+}
 
 </script>
 </body>
